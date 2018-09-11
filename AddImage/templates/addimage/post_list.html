@@ -1,0 +1,32 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/AddImage.css' %}">
+        <script src="{% static 'javascript/myScript.js' %}"></script>
+        <title> Image Search </title>
+    </head>
+    <body>
+<div class="page-header">
+    <h1>Image Search</h1>
+</div>
+<a href="{% url 'kategorie' parameter=0 %}"> Spis Kategorii </a>
+<div class="center">
+    <div class="row">
+        <div class="col-md-3">
+            {% for post in posts %}
+                <h2><a href="">{{ post.title }}</a></h2>
+                <a href="{{ post.image.url }}"><img src="{{ post.image.url }}", onclick="myFunction(event)"></a>
+            {% endfor %}
+       </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
+
+
